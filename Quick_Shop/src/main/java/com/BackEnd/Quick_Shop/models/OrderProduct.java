@@ -2,10 +2,14 @@ package com.BackEnd.Quick_Shop.models;
 
 import java.util.UUID;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "Order_Products")
 public class OrderProduct {
 
     @Id 

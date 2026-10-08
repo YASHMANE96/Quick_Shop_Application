@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,8 @@ public class Order {
     private LocalDateTime AssignDateTime;
     private LocalDateTime DeliveredDateTime;
     private LocalDateTime PlacedDateTime;
+
+    @OneToMany
     List<OrderProduct> orderproductList;
 
     @ManyToOne 
