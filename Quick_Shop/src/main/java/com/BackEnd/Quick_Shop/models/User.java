@@ -1,7 +1,7 @@
 package com.BackEnd.Quick_Shop.models;
 
-import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,10 +20,14 @@ public class User {
 
     @Id 
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private UUID Id;
+    private int Id;
     private String Name;
+
+    @Column(unique = true)
     private String Email;
     private String Password;
+
+    @Column(unique = true)
     private Long MobileNumber;
     private int Pincode;
     private String AddressLine1;

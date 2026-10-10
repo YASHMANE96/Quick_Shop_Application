@@ -6,6 +6,7 @@ import com.BackEnd.Quick_Shop.DTO.SigninDTO;
 import com.BackEnd.Quick_Shop.Exceptions.InvalidCredentialsException;
 import com.BackEnd.Quick_Shop.Exceptions.UserNotFoundException;
 import com.BackEnd.Quick_Shop.Repositories.UserRepository;
+import com.BackEnd.Quick_Shop.enums.UserType;
 import com.BackEnd.Quick_Shop.models.User;
 
 @Service 
@@ -17,7 +18,6 @@ public class UserService {
     /* 
         Constructor Based Autowired 
         This is what we use in the industry
-        @Param UserRepository
     */
     
     UserRepository userRepository;
@@ -45,4 +45,19 @@ public class UserService {
         throw new InvalidCredentialsException("Wrong Email And Password Entered"); 
 
     }   
+
+    public User SaveOrUpdateUser(User user) {
+
+        return userRepository.save(user);
+    }
+
+    public boolean isMaintUser(User user) {
+
+        return user.getUserType().equals(UserType.MAINT.toString());
+    }
+
+    public User GetUserById(int Id) {
+
+        return userRepository.findById(Id).orElse(null);
+    }
 }

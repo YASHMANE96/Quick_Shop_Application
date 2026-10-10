@@ -1,7 +1,6 @@
 package com.BackEnd.Quick_Shop.models;
 
 import java.util.List;
-import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +22,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) 
-    private UUID Id;
+    private int Id;
     private String Product_Name;
     private String Product_Specification;
     private String Manufacturer;
