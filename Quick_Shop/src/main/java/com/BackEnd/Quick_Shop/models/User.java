@@ -32,4 +32,5 @@ public class User {
     private String UserType;
     private String Gender;
     private String Status;
+
 }
